@@ -1,5 +1,29 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="about pa-6">
+    <h1>About vuetify Todo</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae
+      similique iusto doloremque, tempora eligendi, eveniet, modi neque sed vel
+      beatae quaerat cupiditate! Labore veritatis maxime unde, itaque enim neque
+      molestiae?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae
+      similique iusto doloremque, tempora eligendi, eveniet, modi neque sed vel
+      beatae quaerat cupiditate! Labore veritatis maxime unde, itaque enim neque
+      molestiae?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae
+      similique iusto doloremque, tempora eligendi, eveniet, modi neque sed vel
+      beatae quaerat cupiditate! Labore veritatis maxime unde, itaque enim neque
+      molestiae?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae
+      similique iusto doloremque, tempora eligendi, eveniet, modi neque sed vel
+      beatae quaerat cupiditate! Labore veritatis maxime unde, itaque enim neque
+      molestiae?
+    </p>
   </div>
 </template>

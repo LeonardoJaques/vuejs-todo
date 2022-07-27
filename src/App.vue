@@ -3,7 +3,9 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="text-h6 pa-6"> Vuetify Todo </v-list-item-title>
+          <v-list-item-title class="text-h6 pa-6">
+            Vuetify Todo
+          </v-list-item-title>
           <v-list-item-subtitle> Best todo ever today </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -23,13 +25,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      color="primary"
-      dark
-      src="mountains.jpg"
-      prominent
-    >
+    <v-app-bar app color="primary" dark src="mountains.jpg" prominent>
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
@@ -58,11 +54,13 @@
 
     <v-main>
       <router-view></router-view>
+      <snackbar/>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import Snackbar from './components/Shared/SnackBar.vue';
 
 export default {
   data: () => ({
@@ -72,5 +70,8 @@ export default {
       { title: "About", icon: "mdi-help-box", to: "/about" },
     ],
   }),
+  components: {
+    "snackbar": Snackbar
+  },
 };
 </script>

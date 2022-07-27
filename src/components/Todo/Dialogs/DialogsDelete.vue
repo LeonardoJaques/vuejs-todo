@@ -22,7 +22,7 @@ import store from "@/store";
 export default {
   name: "DialogDelete",
   props: ["task"],
-  data: () => {
+  data() {
     return { store };
   },
 };

@@ -1,10 +1,11 @@
 <template lang="html">
   <v-text-field
-  v-model="search"
+    :value="store.state.search"
+    @input="store.commit('setSearch', $event)"
     @focus="searchClose = false"
     @blur="searchClose = true"
     class="expanding-search mt-1"
-    :class="{'closed': searchClose && !search}"
+    :class="{'closed': searchClose && !store.state.search}"
     placeholder="Search"
     filled
     dense
@@ -13,11 +14,13 @@
   ></v-text-field>
 </template>
 <script>
+import store from '@/store';
+
 export default {
   name: "Search",
   data() {
     return {
-      search: null,
+      store,
       searchClose: true,
     };
   },

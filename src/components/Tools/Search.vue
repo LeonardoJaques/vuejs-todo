@@ -1,9 +1,10 @@
 <template lang="html">
   <v-text-field
+  v-model="search"
     @focus="searchClose = false"
     @blur="searchClose = true"
     class="expanding-search mt-1"
-    :class="{'closed': searchClose}"
+    :class="{'closed': searchClose && !search}"
     placeholder="Search"
     filled
     dense
@@ -16,6 +17,7 @@ export default {
   name: "Search",
   data() {
     return {
+      search: null,
       searchClose: true,
     };
   },

@@ -29,7 +29,7 @@ export default {
     &:before, &:after
       border-color: transparent !important
   &.closed
-    max-width: 45px
+    max-width: 2.8125rem
     .v-input__slot
       background: transparent !important
 </style>

@@ -51,7 +51,7 @@
           <search />
         </v-row>
         <v-row>
-          <v-app-bar-title class="text-h4 ml-4">Vuetify Todo</v-app-bar-title>
+          <v-app-bar-title class="text-h4 ml-4">{{store.state.appTitle}}</v-app-bar-title>
         </v-row>
         <v-row>
           <live-date-time />
@@ -69,15 +69,19 @@
 import Snackbar from "./components/Shared/SnackBar.vue";
 import Search from "./components/Tools/Search.vue";
 import LiveDateTime from "./components/Tools/LiveDateTime.vue";
+import store from './store';
+
 
 export default {
   data: () => ({
     drawer: null,
+    store,
     items: [
       { title: "Todo", icon: "mdi-format-list-checks", to: "/" },
       { title: "About", icon: "mdi-help-box", to: "/about" },
     ],
   }),
+
   components: {
     "live-date-time": LiveDateTime,
     snackbar: Snackbar,

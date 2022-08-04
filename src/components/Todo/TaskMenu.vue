@@ -40,6 +40,7 @@
 import DialogsDelete from "./Dialogs/DialogsDelete.vue";
 import DialogsEdit from "./Dialogs/DialogsEdit.vue";
 import DialogDueDates from "./Dialogs/DialogDueDates.vue";
+import store from "@/store";
 
 export default {
   name: "TaskMenu",
@@ -50,6 +51,7 @@ export default {
       dueDate: false,
       edit: false,
     },
+    store,
     items: [
       {
         title: "Edit",
@@ -70,6 +72,13 @@ export default {
         icon: "mdi-delete",
         click() {
           this.dialogs.delete = true;
+        },
+      },
+      {
+        title: "Sort",
+        icon: "mdi-drag-horizontal-variant",
+        click() {
+          this.store.commit("toggleSorting");
         },
       },
     ],

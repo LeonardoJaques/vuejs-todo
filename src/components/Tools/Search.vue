@@ -11,6 +11,7 @@
     dense
     clearable
     prepend-inner-icon="mdi-magnify"
+    :disabled="store.state.sorting"
   ></v-text-field>
 </template>
 <script>

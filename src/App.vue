@@ -13,7 +13,9 @@
             alt="Leonardo jaques"
           />
         </v-avatar>
-        <div class="white--text text-subtitle-1 font-weight-bold">Leonardo jaques</div>
+        <div class="white--text text-subtitle-1 font-weight-bold">
+          Leonardo jaques
+        </div>
         <div class="white--text text-subtitle-2">Leo__Jaques</div>
       </v-img>
 
@@ -36,12 +38,12 @@
       dark
       src="mountains.jpg"
       prominent
-      height="170"
+      :height="$route.path === '/' ? '230' : '170'"
     >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+          gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.9)"
         ></v-img>
       </template>
       <v-container class="header-container pa-0">
@@ -51,10 +53,15 @@
           <search />
         </v-row>
         <v-row>
-          <v-app-bar-title class="text-h4 ml-4">{{store.state.appTitle}}</v-app-bar-title>
+          <v-app-bar-title class="text-h4 ml-4">{{
+            store.state.appTitle
+          }}</v-app-bar-title>
         </v-row>
         <v-row>
           <live-date-time />
+        </v-row>
+        <v-row v-if="$route.path === '/'">
+          <field-add-task />
         </v-row>
       </v-container>
     </v-app-bar>
@@ -69,8 +76,8 @@
 import Snackbar from "./components/Shared/SnackBar.vue";
 import Search from "./components/Tools/Search.vue";
 import LiveDateTime from "./components/Tools/LiveDateTime.vue";
-import store from './store';
-
+import FieldAddTask from "@/components/Todo/FieldAddTask.vue";
+import store from "./store";
 
 export default {
   data: () => ({
@@ -82,10 +89,11 @@ export default {
     ],
   }),
   mounted() {
-    this.store.dispatch('getTasks')
+    this.store.dispatch("getTasks");
   },
   components: {
     "live-date-time": LiveDateTime,
+    "field-add-task": FieldAddTask,
     snackbar: Snackbar,
     search: Search,
     LiveDateTime,
@@ -93,6 +101,6 @@ export default {
 };
 </script>
 <style lang="sass">
-  .header-container
-      max-width: none !important
+.header-container
+    max-width: none !important
 </style>

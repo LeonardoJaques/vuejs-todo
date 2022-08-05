@@ -23,6 +23,7 @@
 </template>
 <script>
 import store from "@/store";
+import { duration } from "moment";
 export default {
   name: "DialogDelete",
   props: ["task"],
@@ -40,6 +41,7 @@ export default {
         };
         store.dispatch("updateTaskTitle", payLoad);
         this.$emit("close");
+        this.$vuetify.goTo(0, { duration: 0 });
       }
     },
   },

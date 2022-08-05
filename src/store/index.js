@@ -10,26 +10,7 @@ export default new Vuex.Store({
   state: {
     appTitle: process.env.VUE_APP_TITLE || "Todo List",
     search: null,
-    tasks: [
-      // {
-      //   id: 1,
-      //   title: "Wake up",
-      //   done: false,
-      //   dueDate: "2022-10-16",
-      // },
-      // {
-      //   id: 2,
-      //   title: "Get potatoes",
-      //   done: false,
-      //   dueDate: "2022-10-17",
-      // },
-      // {
-      //   id: 3,
-      //   title: "Eat potatoes",
-      //   done: false,
-      //   dueDate: null,
-      // },
-    ],
+    tasks: [],
     snackbar: {
       show: false,
       text: "",
